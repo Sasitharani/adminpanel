@@ -91,33 +91,56 @@ function App() {
               ECOMMERCE COMPONENT
             </h2>
             <li>
-              <a
-                data-bs-toggle="collapse"
-                href="#dropDown"
-                role="button"
-                class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
-              >
-                <span>
-                  <FontAwesomeIcon icon={faDroplet} className="me-2" />
-                </span>
-                {/* {data.map((item, index) => (
+              
+                
+                {data.map((item, index) => (
                   <li key={index}>
-                    <a className="dropdown-item" href={item.ref1}>
+                                     
+                     <a
+                        data-bs-toggle="collapse"
+                       href={`#dropDown${index}`}
+                        role="button"
+                        class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                     >
+                     <span>                   <FontAwesomeIcon icon={faDroplet} className="me-2" />                 </span> 
+               
+                     <span className="mx-5">{item.name}</span>
+                     <span>                   <FontAwesomeIcon icon={faChevronDown} className="me-2" />             </span>
+                    {/* <a className="dropdown-item" href={item.ref1}>
                       <FontAwesomeIcon icon={item.icon} className="me-2" />
                       {item.name}
-                    </a>
+                    </a> */}
+                     </a>
+                     <div className="row">
+                        <div className="col">
+                           {item.items.map((subItem, subIndex) => (
+                              <div key={subIndex} className="collapse multi-collapse" id={`dropDown${subIndex}`}>
+                              <div className="visible m-3">
+                                 <a
+                                    href="#"
+                                    className="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                                 >
+                                    <div className="flex-1">{subItem}</div>
+                                    {item.items.map((subItem, subIndex) => (
+                                       <div className="flex-1">{subItem}</div>
+                                       ))}
+                                 </a>
+                              </div>
+                              </div>
+                           ))}
+                        </div>
+                        </div>
                   </li>
-                ))} */}
-                <span className="mx-5">Colors</span>
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} className="me-2" />
-                </span>
-              </a>
+                ))}
+
+             
+             
 
               <div class="row">
                 <div class="col">
                   <div class="collapse multi-collapse" id="dropDown">
                     <div class="visible m-3">
+                 
                       <a
                         href="#"
                         class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
