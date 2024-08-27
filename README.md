@@ -14,3 +14,10 @@ git push origin <branch-name>
 git clone <repository-url>
 git remote set-url <name> <newurl>         || git remote set-url origin https://github.com/username/new-repo.git
 
+Merge code
+git fetch origin
+git checkout -b new-branch-name origin/main
+git merge old-branch-name
+git commit -m "Merged changes from old-branch-name"
+git push origin new-branch-name
+
