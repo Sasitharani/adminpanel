@@ -2,15 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDroplet } from '@fortawesome/free-solid-svg-icons';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import data from './data';
-
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import data from "./data";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -91,54 +89,52 @@ function App() {
               ECOMMERCE COMPONENT
             </h2>
             <li>
-              
-                
-                {data.map((item, index) => (
-                  <li key={index}>
-                                     
-                     <a
-                        data-bs-toggle="collapse"
-                       href={`#dropDown${index}`}
-                        role="button"
-                        class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
-                     >
-                     <span>                   <FontAwesomeIcon icon={faDroplet} className="me-2" />                 </span> 
-               
-                     <span className="mx-5">{item.name}</span>
-                     <span>                   <FontAwesomeIcon icon={faChevronDown} className="me-2" />             </span>
-                    {/* <a className="dropdown-item" href={item.ref1}>
-                      <FontAwesomeIcon icon={item.icon} className="me-2" />
-                      {item.name}
-                    </a> */}
-                     </a>
-                     <div className="row">
-                        <div className="col">
-                           {item.items.map((subItem, subIndex) => (
-                              <div key={subIndex} className="collapse multi-collapse" id={`dropDown${index}`}>
-                              <div className="visible m-3">
-                                 <a
-                                    href="#"
-                                    className="d-block flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
-                                 >
-                                      {subItem} 
-                                 </a>
-                                 
-                              </div>
-                              </div>
-                           ))}
-                        </div>
-                        </div>
-                  </li>
-                ))}
+              {data.map((item, index) => (
+                <li key={index}>
+                  <a
+                    data-bs-toggle="collapse"
+                    href={`#dropDown${index}`}
+                    role="button"
+                    class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                  >
+                    <span>
+                      {" "}
+                      <FontAwesomeIcon icon={faDroplet} className="me-2" />{" "}
+                    </span>
 
-             
-             
+                    <span className="mx-5">{item.name}</span>
+                    <span>
+                      {" "}
+                      <FontAwesomeIcon icon={faChevronDown} className="me-2" />
+                    </span>
+                  </a>
+                  <div className="row">
+                    <div className="col">
+                      {item.items.map((subItem, subIndex) => (
+                        <div
+                          key={subIndex}
+                          className="collapse multi-collapse"
+                          id={`dropDown${index}`}
+                        >
+                          <div className="visible m-3">
+                            <a
+                              href="#"
+                              className="d-block flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                            >
+                              {subItem}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </li>
+              ))}
 
               <div class="row">
                 <div class="col">
                   <div class="collapse multi-collapse" id="dropDown">
                     <div class="visible m-3">
-                 
                       <a
                         href="#"
                         class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
@@ -161,7 +157,6 @@ function App() {
                   </div>
                 </div>
               </div>
-          
             </li>
             <li>
               <a
