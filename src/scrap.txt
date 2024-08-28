@@ -1,0 +1,56 @@
+This is my data.js file 
+// src/data.js
+import { faHome, faUser, faCog } from '@fortawesome/free-solid-svg-icons';
+
+const data = [
+  {
+    name: 'Color',
+    icon: faHome,
+    ref1: '#home1',
+    ref2: '#home2',
+    items: ['Red', 'Blue', 'Green']
+  },
+  {
+    name: 'Size',
+    icon: faUser,
+    ref1: '#profile1',
+    ref2: '#profile2',
+    items: ['Small', 'Medium', 'Large']
+  },
+  {
+    name: 'Parent',
+    icon: faCog,
+    ref1: '#settings1',
+    ref2: '#settings2',
+    items: ['Father', 'Mother', 'Guardian']
+  }
+];
+
+export default data;
+I am importing this file in my app.js 
+  <div className="row">
+                        <div className="col">
+                           {item.items.map((subItem, subIndex) => (
+                              <div key={subIndex} className="collapse multi-collapse" id={`dropDown${subIndex}`}>
+                              <div className="visible m-3">
+                                 <a
+                                    href="#"
+                                    className="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                                 >
+                                {item.items.map((subItem, subIndex) => (
+                                  <div>
+                                    {/* <h1>{subIndex} {subItem}</h1> */}
+                                   
+                                    <a href="#" className="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group">
+                                      {subItem} 
+                                    </a>
+                                   
+                                  </div>
+                                       ))}
+                                 </a>
+                                 
+                              </div>
+                              </div>
+                           ))}
+                        </div>
+                        </div>
