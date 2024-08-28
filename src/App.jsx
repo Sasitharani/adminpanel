@@ -105,8 +105,15 @@ function App() {
                     <span className="mx-5">{item.name}</span>
                     <span>
                       {" "}
-                      <FontAwesomeIcon icon={faChevronDown} className="me-2" />
+                      <FontAwesomeIcon
+                        icon={faChevronDown}
+                        className="me-2"
+                      />{" "}
                     </span>
+                    {/* <a className="dropdown-item" href={item.ref1}>
+                      <FontAwesomeIcon icon={item.icon} className="me-2" />
+                      {item.name}
+                    </a> */}
                   </a>
                   <div className="row">
                     <div className="col">
@@ -119,7 +126,9 @@ function App() {
                           <div className="visible m-3">
                             <a
                               href="#"
-                              className="d-block flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                              className="d-block flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md px-2 py-1
+                                     dark:hover:bg-gray-700
+                                      group"
                             >
                               {subItem}
                             </a>
