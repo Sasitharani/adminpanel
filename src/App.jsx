@@ -137,7 +137,7 @@ function App() {
                     <div class="visible m-3">
                       <a
                         href="#"
-                        class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                        class="flex items-center px-2 py-1 text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md dark:hover:bg-gray-700 group"
                       >
                         <div class="flex-1 whitespace-nowrap">Item 1</div>
                       </a>
