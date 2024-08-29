@@ -2,15 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDroplet } from '@fortawesome/free-solid-svg-icons';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import data from './data';
-
-
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDroplet } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import data from "./data";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -91,28 +89,56 @@ function App() {
               ECOMMERCE COMPONENT
             </h2>
             <li>
-              <a
-                data-bs-toggle="collapse"
-                href="#dropDown"
-                role="button"
-                class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
-              >
-                <span>
-                  <FontAwesomeIcon icon={faDroplet} className="me-2" />
-                </span>
-                {/* {data.map((item, index) => (
-                  <li key={index}>
-                    <a className="dropdown-item" href={item.ref1}>
+              {data.map((item, index) => (
+                <li key={index}>
+                  <a
+                    data-bs-toggle="collapse"
+                    href={`#dropDown${index}`}
+                    role="button"
+                    class="flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-200 rounded-s-md p-2 dark:hover:bg-gray-700 group"
+                  >
+                    <span>
+                      {" "}
+                      <FontAwesomeIcon icon={faDroplet} className="me-2" />{" "}
+                    </span>
+
+                    <span className="mx-5">{item.name}</span>
+                    <span>
+                      {" "}
+                      <FontAwesomeIcon
+                        icon={faChevronDown}
+                        className="me-2"
+                      />{" "}
+                    </span>
+                    {/* <a className="dropdown-item" href={item.ref1}>
                       <FontAwesomeIcon icon={item.icon} className="me-2" />
                       {item.name}
-                    </a>
-                  </li>
-                ))} */}
-                <span className="mx-5">Colors</span>
-                <span>
-                  <FontAwesomeIcon icon={faChevronDown} className="me-2" />
-                </span>
-              </a>
+                    </a> */}
+                  </a>
+                  <div className="row">
+                    <div className="col">
+                      {item.items.map((subItem, subIndex) => (
+                        <div
+                          key={subIndex}
+                          className="collapse multi-collapse"
+                          id={`dropDown${index}`}
+                        >
+                          <div className="visible m-3">
+                            <a
+                              href="#"
+                              className="d-block flex items-center text-gray-900 rounded-lg dark:text-white hover:bg-stone-300 rounded-s-md px-2 py-1
+                                     dark:hover:bg-gray-700
+                                      group"
+                            >
+                              {subItem}
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </li>
+              ))}
 
               <div class="row">
                 <div class="col">
@@ -140,98 +166,6 @@ function App() {
                   </div>
                 </div>
               </div>
-              {/* <button
-                id="dropdownDefaultButton"
-                data-dropdown-toggle="dropdown"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                type="button"
-              >
-                Dropdown button{" "}
-                <svg
-                  class="w-2.5 h-2.5 ms-3"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 6"
-                >
-                  <path
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m1 1 4 4 4-4"
-                  />
-                </svg>
-              </button>
-              
-              <div
-                id="dropdown"
-                class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
-              >
-                <ul
-                  class="py-2 text-sm text-gray-700 dark:text-gray-200"
-                  aria-labelledby="dropdownDefaultButton"
-                >
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Dashboard
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Settings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Earnings
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                    >
-                      Sign out
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <ul id="dropdown-example" class="hidden py-2 space-y-2">
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Billing
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
-                  >
-                    Invoice
-                  </a>
-                </li>
-              </ul> */}
             </li>
             <li>
               <a
