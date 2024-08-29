@@ -1,4 +1,25 @@
-      <button
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCog } from "@fortawesome/react-fontawesome";
+// import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { faChartPie, faChevronDown, faUser } from "@fortawesome/free-solid-svg-icons";
+import data from "./data";
+import iconMapping from './iconMapping';
+import SideBar from "./SideBar";
+import SideBarTop from "./SideBarTop";
+
+import React from 'react'
+
+export default function SideBarFull() {
+  return (
+    <div>
+    <button
         data-drawer-target="sidebar-multi-level-sidebar"
         data-drawer-toggle="sidebar-multi-level-sidebar"
         aria-controls="sidebar-multi-level-sidebar"
@@ -22,3 +43,6 @@
           </ul>
         </div>
       </aside>
+    </div>
+  )
+}

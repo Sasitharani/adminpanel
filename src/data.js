@@ -1,28 +1,60 @@
 // src/data.js
-import { faHome, faUser, faCog } from '@fortawesome/free-solid-svg-icons';
-
 const data = [
   {
     name: 'Color',
-    icon: faHome,
-    ref1: '#home1',
-    ref2: '#home2',
-    items: ['Red', 'Blue', 'Green']
+    icon: 'faHome',
+    items: ['Red', 'Blue', 'Green'],
+    subIcon:'faUser'
   },
   {
     name: 'Size',
-    icon: faUser,
-    ref1: '#profile1',
-    ref2: '#profile2',
-    items: ['Small', 'Medium', 'Large']
+    icon: 'faExpand',
+    items: ['Size Details', 'View Size'],
+    subIcon:'faCircleStop'
   },
   {
     name: 'Parent',
-    icon: faCog,
-    ref1: '#settings1',
-    ref2: '#settings2',
-    items: ['Father', 'Mother', 'Guardian']
-  }
+    icon: 'faBars',
+    items: ['Add Category','View Category'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Sub Parent',
+    icon: 'faCog',
+    items: ['Add Sub Category','View Sub Category'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Product',
+    icon: 'faBagShopping',
+    items: ['Product Details', 'Product Items'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Story',
+    icon: 'faPenToSquare',
+    items: ['Story Details', 'View Details'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Order',
+    icon: 'faClockRotateLeft',
+    items: ['Orders'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Slider',
+    icon: 'faSliders',
+    items: ['Slider Details', 'Slider View'],
+    subIcon:'faCircleStop'
+  },
+  {
+    name: 'Terms and Condition',
+    icon: 'faFileAlt',
+    items: ['Father', 'Mother', 'Guardian'],
+    subIcon:'faUser'
+  },
+
 ];
 
 export default data;
